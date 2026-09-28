@@ -1,0 +1,44 @@
+# Archivo: app_principal.py
+
+from caballo_ejemplar import CaballoEjemplar
+from pato_silvestre import PatoSilvestre
+from cocodrilo_pantano import CocodriloPantano
+from escarabajo_silvestre import EscarabajoSilvestre
+
+def iniciar_programa():
+    print("=== EJERCICIO DE ANIMALES COMPLETO (POO) ===")
+
+    # Instanciación de especímenes
+    ejemplar_caballo = CaballoEjemplar(alias="Rayo", edad_anios=5, tonalidad="Marrón", porte="Grande", max_velocidad=60)
+    ejemplar_pato = PatoSilvestre(alias="Lucas", edad_anios=2, tonalidad="Verde y Blanco", puede_volar=True)
+    ejemplar_cocodrilo = CocodriloPantano(alias="Dante", edad_anios=12, tonalidad="Verde Oscuro", metros_longitud=3.5)
+    ejemplar_escarabajo = EscarabajoSilvestre(alias="Hércules", edad_meses=6, tonalidad="Negro Brillante", posee_cuerno=True)
+
+    # Invocación de comportamientos
+    rugido_caiman = ejemplar_cocodrilo.emitir_sonido()
+    nado_caiman = ejemplar_cocodrilo.desplazarse()
+    comida_caiman = ejemplar_cocodrilo.ingerir_alimento()
+
+    sonido_bicho = ejemplar_escarabajo.emitir_sonido()
+    marcha_bicho = ejemplar_escarabajo.desplazarse()
+    comida_bicho = ejemplar_escarabajo.ingerir_alimento()
+
+    # Muestra de salidas impresas
+    print("\n--- RESULTADOS: CABALLO Y PATO ---")
+    print(ejemplar_caballo.emitir_sonido())
+    print(ejemplar_pato.emitir_sonido())
+
+    print("\n--- RESULTADOS: COCODRILO ---")
+    print(rugido_caiman)
+    print(nado_caiman)
+    print(comida_caiman)
+    print(f"Energía actual: {ejemplar_cocodrilo.consultar_energia()}%")
+
+    print("\n--- RESULTADOS: ESCARABAJO ---")
+    print(sonido_bicho)
+    print(marcha_bicho)
+    print(comida_bicho)
+    print(f"Energía actual: {ejemplar_escarabajo.consultar_energia()}%")
+
+if __name__ == "__main__":
+    iniciar_programa()
